@@ -2,14 +2,17 @@ public class Logger{
     private static Logger instance;
 
     private Logger(){
-        system.out.prinln("Initialised Logger");
+        System.out.println("Initialised Logger");
     }
 
     public static Logger getInstance(){
+        if (instance == null) {
+            instance = new Logger();
+        }
         return instance;
     }
 
     public void log(String mesg){
-        system.out.prinln("Log: "+ mesg);
+        System.out.println("Log: "+ mesg);
     }
 }
