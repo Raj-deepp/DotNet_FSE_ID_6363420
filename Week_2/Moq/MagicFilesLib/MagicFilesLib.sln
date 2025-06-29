@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36203.30 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicFilesLib", "MagicFilesLib\MagicFilesLib.csproj", "{8F0C2E36-615B-4A80-B541-4B3FA47A6AF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryExplorer.Tests", "DirectoryExplorer.Tests\DirectoryExplorer.Tests.csproj", "{7C8A7CAA-D868-4F7B-9614-969614A2725E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8F0C2E36-615B-4A80-B541-4B3FA47A6AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F0C2E36-615B-4A80-B541-4B3FA47A6AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F0C2E36-615B-4A80-B541-4B3FA47A6AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8A7CAA-D868-4F7B-9614-969614A2725E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8A7CAA-D868-4F7B-9614-969614A2725E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8A7CAA-D868-4F7B-9614-969614A2725E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8A7CAA-D868-4F7B-9614-969614A2725E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
