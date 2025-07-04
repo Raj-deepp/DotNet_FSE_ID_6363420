@@ -1,10 +1,4 @@
-﻿namespace RetailInventory
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+﻿using RetailInventory.Data;
+
+var context = new AppDbContext();
+Console.WriteLine("Connected to database.");
