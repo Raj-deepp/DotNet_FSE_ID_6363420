@@ -26,22 +26,43 @@ using RetailInventory.Models;
 
 //LAB 5 ->  RETRIRVING DATA FROM THE DATABASE
 
-var context = new AppDbContext();
+//var context = new AppDbContext();
 
-var products = await context.Products.ToListAsync();
-Console.WriteLine("All Products:");
-foreach (var p in products)
-    Console.WriteLine($"{p.Name} - ₹{p.Price}");
+//var products = await context.Products.ToListAsync();
+//Console.WriteLine("All Products:");
+//foreach (var p in products)
+//    Console.WriteLine($"{p.Name} - ₹{p.Price}");
 
-Console.WriteLine();
+//Console.WriteLine();
 
-var product = await context.Products.FindAsync(1);
-Console.WriteLine($"Found (by ID 1): {product?.Name}");
+//var product = await context.Products.FindAsync(1);
+//Console.WriteLine($"Found (by ID 1): {product?.Name}");
 
-Console.WriteLine();
+//Console.WriteLine();
 
-var expensive = await context.Products.FirstOrDefaultAsync(p => p.Price > 50000);
-Console.WriteLine($"Expensive product (> ₹50000): {expensive?.Name}");
+//var expensive = await context.Products.FirstOrDefaultAsync(p => p.Price > 50000);
+//Console.WriteLine($"Expensive product (> ₹50000): {expensive?.Name}");
 
 //--------------------------------------------------------------------------------------
 
+
+
+//LAB 6 -> UPDATING & DELETING RECORDS
+
+var context = new AppDbContext();
+
+var product = await context.Products.FirstOrDefaultAsync(p => p.Name == "Laptop");
+if (product != null)
+{
+    product.Price = 70000;
+    await context.SaveChangesAsync();
+    Console.WriteLine("Laptop price updated to ₹70000");
+}
+
+var toDelete = await context.Products.FirstOrDefaultAsync(p => p.Name == "Rice Bag");
+if (toDelete != null)
+{
+    context.Products.Remove(toDelete);
+    await context.SaveChangesAsync();
+    Console.WriteLine("Rice Bag deleted");
+}
