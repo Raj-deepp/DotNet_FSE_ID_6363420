@@ -18,3 +18,15 @@
 <br>
 <br>
 <br>
+
+-> LAB 7
+![Screenshot 2025-07-06 144735](https://github.com/user-attachments/assets/097205ff-baa1-4391-987a-fd03911b0ee0)
+<br>
+<br>
+<br>
+
+-> LAB 8
+![Screenshot 2025-07-06 201144](https://github.com/user-attachments/assets/b5e530b7-25e0-441c-b953-d4e4dab54ae9)
+<br>
+<br>
+<br>
