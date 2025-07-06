@@ -7,6 +7,8 @@ namespace RetailInventory.Data
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ProductDetail> ProductDetails { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,6 +48,12 @@ namespace RetailInventory.Data
                     StockQuantity = 100
                 }
             );
+
+            // Lab 11: Configure One-to-One Product <-> ProductDetail
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.ProductDetail)
+                .WithOne(pd => pd.Product)
+                .HasForeignKey<ProductDetail>(pd => pd.ProductId);
         }
     }
 }

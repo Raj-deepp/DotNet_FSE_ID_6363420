@@ -128,6 +128,7 @@ var lazyProduct = await context.Products.FirstOrDefaultAsync();
 
 if (lazyProduct != null)
 {
-    // No Include, no LoadAsync — just direct property access triggers lazy load
     Console.WriteLine($"{lazyProduct.Name} - ₹{lazyProduct.Price} - Category: {lazyProduct.Category.Name}");
 }
+
+//--------------------------------------------------------------------------------------
