@@ -1,3 +1,5 @@
+The Lab_1 folder contains all the lab solutions of EF Core 8.0 Guided Hands-On Exercises.
+<br>
 ## OUTPUTS
 
 -> LAB 4
@@ -39,6 +41,24 @@
 
 ->LAB 10
 ![Screenshot 2025-07-07 011436](https://github.com/user-attachments/assets/d9d2776f-7e7e-43e1-85c7-3a1ab297243a)
+<br>
+<br>
+<br>
+
+-> LAB 12
+![Screenshot 2025-07-07 014307](https://github.com/user-attachments/assets/c7750d19-fc9a-4037-a6ef-34425715f49e)
+<br>
+<br>
+<br>
+
+-> LAB 13
+![Screenshot 2025-07-07 020756](https://github.com/user-attachments/assets/b143aded-94af-4f68-8af0-7ae72b4535e1)
+<br>
+<br>
+<br>
+
+-> LAB 15
+![Screenshot 2025-07-07 032201](https://github.com/user-attachments/assets/8b805c6a-56da-474b-8eae-ba35dbb4e6de)
 <br>
 <br>
 <br>
