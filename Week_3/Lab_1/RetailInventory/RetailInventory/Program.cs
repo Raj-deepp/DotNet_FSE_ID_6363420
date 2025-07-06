@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RetailInventory.Data;
 using RetailInventory.Models;
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
 
 
 //LAB 4 ->  INSERTING INITIAL DATA INTO THE DATABASE
@@ -96,3 +98,36 @@ foreach (var dto in productDTOs)
     Console.WriteLine($"{dto.Name} - ₹{dto.Price}");
 
 //--------------------------------------------------------------------------------------
+
+
+
+// LAB 10 -> EAGER, EXPLICIT, AND LAZY LOADING
+
+Console.WriteLine("\n=== Lab 10: Eager Loading ===");
+
+var eagerProducts = await context.Products
+    .Include(p => p.Category)
+    .ToListAsync();
+
+foreach (var p in eagerProducts)
+    Console.WriteLine($"{p.Name} - ₹{p.Price} - Category: {p.Category.Name}");
+
+Console.WriteLine("\n=== Lab 10: Explicit Loading ===");
+
+var firstProduct = await context.Products.FirstOrDefaultAsync();
+
+if (firstProduct != null)
+{
+    await context.Entry(firstProduct).Reference(p => p.Category).LoadAsync();
+    Console.WriteLine($"{firstProduct.Name} - ₹{firstProduct.Price} - Category: {firstProduct.Category.Name}");
+}
+
+Console.WriteLine("\n=== Lab 10: Lazy Loading ===");
+
+var lazyProduct = await context.Products.FirstOrDefaultAsync();
+
+if (lazyProduct != null)
+{
+    // No Include, no LoadAsync — just direct property access triggers lazy load
+    Console.WriteLine($"{lazyProduct.Name} - ₹{lazyProduct.Price} - Category: {lazyProduct.Category.Name}");
+}
