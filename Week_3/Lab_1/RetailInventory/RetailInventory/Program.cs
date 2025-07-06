@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RetailInventory.Data;
+using RetailInventory.Helpers;
 using RetailInventory.Models;
+using RetailInventory.Helpers;
 Console.OutputEncoding = System.Text.Encoding.UTF8;
-
 
 
 //LAB 4 ->  INSERTING INITIAL DATA INTO THE DATABASE
@@ -134,6 +135,7 @@ if (lazyProduct != null)
 //--------------------------------------------------------------------------------------
 
 
+
 Console.WriteLine("\n=== Lab 12: Projecting to ProductDTO ===");
 
 var productDTOs2 = await context.Products
@@ -146,3 +148,25 @@ var productDTOs2 = await context.Products
 
 foreach (var dto in productDTOs2)
     Console.WriteLine($"{dto.Name} belongs to {dto.CategoryName}");
+
+//--------------------------------------------------------------------------------------
+
+
+
+Console.WriteLine("\n=== Lab 13: AsNoTracking ===");
+
+var notrackedProducts = await context.Products
+    .AsNoTracking()
+    .ToListAsync();
+
+foreach (var p in notrackedProducts)
+    Console.WriteLine($"{p.Name} - ₹{p.Price}");
+
+Console.WriteLine("\n=== Lab 13: Compiled Query ===");
+
+await foreach (var p in CompiledQueries.ExpensiveProducts(context, 10000))
+{
+    Console.WriteLine($"{p.Name} - ₹{p.Price}");
+}
+
+//--------------------------------------------------------------------------------------
