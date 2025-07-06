@@ -132,3 +132,17 @@ if (lazyProduct != null)
 }
 
 //--------------------------------------------------------------------------------------
+
+
+Console.WriteLine("\n=== Lab 12: Projecting to ProductDTO ===");
+
+var productDTOs2 = await context.Products
+    .Select(p => new ProductDTO
+    {
+        Name = p.Name,
+        CategoryName = p.Category.Name
+    })
+    .ToListAsync();
+
+foreach (var dto in productDTOs2)
+    Console.WriteLine($"{dto.Name} belongs to {dto.CategoryName}");
