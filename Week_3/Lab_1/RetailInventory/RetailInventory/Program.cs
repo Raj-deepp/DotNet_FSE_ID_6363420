@@ -49,20 +49,50 @@ using RetailInventory.Models;
 
 //LAB 6 -> UPDATING & DELETING RECORDS
 
+//var context = new AppDbContext();
+
+//var product = await context.Products.FirstOrDefaultAsync(p => p.Name == "Laptop");
+//if (product != null)
+//{
+//    product.Price = 70000;
+//    await context.SaveChangesAsync();
+//    Console.WriteLine("Laptop price updated to ₹70000");
+//}
+
+//var toDelete = await context.Products.FirstOrDefaultAsync(p => p.Name == "Rice Bag");
+//if (toDelete != null)
+//{
+//    context.Products.Remove(toDelete);
+//    await context.SaveChangesAsync();
+//    Console.WriteLine("Rice Bag deleted");
+//}
+
+//--------------------------------------------------------------------------------------
+
+
+
+//LAB 7 -> WRITNG QUERIES USING LINQ
+
 var context = new AppDbContext();
 
-var product = await context.Products.FirstOrDefaultAsync(p => p.Name == "Laptop");
-if (product != null)
-{
-    product.Price = 70000;
-    await context.SaveChangesAsync();
-    Console.WriteLine("Laptop price updated to ₹70000");
-}
+var filtered = await context.Products
+    .Where(p => p.Price > 1000)
+    .OrderByDescending(p => p.Price)
+    .ToListAsync();
 
-var toDelete = await context.Products.FirstOrDefaultAsync(p => p.Name == "Rice Bag");
-if (toDelete != null)
-{
-    context.Products.Remove(toDelete);
-    await context.SaveChangesAsync();
-    Console.WriteLine("Rice Bag deleted");
-}
+Console.WriteLine("Filtered Products (Price > ₹1000, Descending):");
+foreach (var p in filtered)
+    Console.WriteLine($"{p.Name} - ₹{p.Price}");
+
+Console.WriteLine();
+
+
+var productDTOs = await context.Products
+    .Select(p => new { p.Name, p.Price })
+    .ToListAsync();
+
+Console.WriteLine("Product DTOs:");
+foreach (var dto in productDTOs)
+    Console.WriteLine($"{dto.Name} - ₹{dto.Price}");
+
+//--------------------------------------------------------------------------------------
