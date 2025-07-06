@@ -30,3 +30,15 @@
 <br>
 <br>
 <br>
+
+-> LAB 9
+![Screenshot 2025-07-07 005557](https://github.com/user-attachments/assets/cf2db8cd-f59d-4381-8852-18a719f11321)
+<br>
+<br>
+<br>
+
+->LAB 10
+![Screenshot 2025-07-07 011436](https://github.com/user-attachments/assets/d9d2776f-7e7e-43e1-85c7-3a1ab297243a)
+<br>
+<br>
+<br>
