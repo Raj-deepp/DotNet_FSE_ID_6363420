@@ -36,6 +36,18 @@ namespace RetailInventory.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 100,
+                            Name = "Electronics"
+                        },
+                        new
+                        {
+                            Id = 200,
+                            Name = "Groceries"
+                        });
                 });
 
             modelBuilder.Entity("RetailInventory.Models.Product", b =>
@@ -64,6 +76,24 @@ namespace RetailInventory.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 101,
+                            CategoryId = 100,
+                            Name = "Smartphone",
+                            Price = 25000m,
+                            StockQuantity = 50
+                        },
+                        new
+                        {
+                            Id = 201,
+                            CategoryId = 200,
+                            Name = "Wheat Flour",
+                            Price = 800m,
+                            StockQuantity = 100
+                        });
                 });
 
             modelBuilder.Entity("RetailInventory.Models.Product", b =>
