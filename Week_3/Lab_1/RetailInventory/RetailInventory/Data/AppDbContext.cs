@@ -37,7 +37,8 @@ namespace RetailInventory.Data
                     Name = "Smartphone",
                     Price = 25000,
                     CategoryId = 100,
-                    StockQuantity = 50
+                    StockQuantity = 50,
+                    RowVersion = new byte[0]
                 },
                 new Product
                 {
@@ -45,7 +46,8 @@ namespace RetailInventory.Data
                     Name = "Wheat Flour",
                     Price = 800,
                     CategoryId = 200,
-                    StockQuantity = 100
+                    StockQuantity = 100,
+                    RowVersion = new byte[0]
                 }
             );
 

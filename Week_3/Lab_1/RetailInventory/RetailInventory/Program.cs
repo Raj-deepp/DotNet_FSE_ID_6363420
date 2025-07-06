@@ -2,7 +2,7 @@
 using RetailInventory.Data;
 using RetailInventory.Helpers;
 using RetailInventory.Models;
-using EFCore.BulkExtensions;
+//using EFCore.BulkExtensions;/
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -173,15 +173,17 @@ await foreach (var p in CompiledQueries.ExpensiveProducts(context, 10000))
 //--------------------------------------------------------------------------------------
 
 
+//LAB 14 -> Batch Processing and Bulk Operations 
 
-Console.WriteLine("\n=== Lab 14: Bulk Update ===");
+//var allProducts = await context.Products.ToListAsync();
 
-var allProducts = await context.Products.ToListAsync();
+//foreach (var p in allProducts)
+//{
+//    p.StockQuantity += 10;
+//}
 
-foreach (var p in allProducts)
-{
-    p.StockQuantity += 10;
-}
+//await context.BulkUpdateAsync(allProducts);
+//Console.WriteLine("Stock updated using BulkUpdateAsync.");
 
-await context.BulkUpdateAsync(allProducts);
-Console.WriteLine("Stock updated using BulkUpdateAsync.");
+//---------------------------------------------------------------------------------------
+

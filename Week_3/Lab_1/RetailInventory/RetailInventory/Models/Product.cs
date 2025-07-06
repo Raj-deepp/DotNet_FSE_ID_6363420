@@ -11,6 +11,6 @@
         public int StockQuantity { get; set; }
         public virtual ProductDetail ProductDetail { get; set; }
         public virtual List<Tag> Tags { get; set; } = new();
-
+        public byte[] RowVersion { get; set; }
     }
 }
