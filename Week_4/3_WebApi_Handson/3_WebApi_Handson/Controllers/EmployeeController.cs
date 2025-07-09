@@ -5,6 +5,7 @@ namespace _3_WebApi_Handson.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [CustomAuthFilter]
     public class EmployeeController : ControllerBase
     {
         private static List<Employee> _employees;
