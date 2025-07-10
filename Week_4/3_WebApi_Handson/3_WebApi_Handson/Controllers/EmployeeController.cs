@@ -30,12 +30,38 @@ namespace _3_WebApi_Handson.Controllers
             return Ok(emp);
         }
 
+        //[HttpPut("{id}")]
+        //public IActionResult Put(int id, [FromBody] Employee emp)
+        //{
+        //    var existing = _employees.FirstOrDefault(e => e.Id == id);
+        //    if (existing == null)
+        //        return NotFound();
+
+        //    existing.Name = emp.Name;
+        //    existing.Salary = emp.Salary;
+        //    existing.Permanent = emp.Permanent;
+        //    existing.Department = emp.Department;
+        //    existing.Skills = emp.Skills;
+        //    existing.DateOfBirth = emp.DateOfBirth;
+
+        //    return Ok(existing);
+        //}
+
+        //------------------------------------------------------------------------------------
+        //4_WebApi_Handson
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Employee emp)
+        public ActionResult<Employee> Put(int id, [FromBody] Employee emp)
         {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid employee id");
+            }
+
             var existing = _employees.FirstOrDefault(e => e.Id == id);
             if (existing == null)
-                return NotFound();
+            {
+                return BadRequest("Invalid employee id");
+            }
 
             existing.Name = emp.Name;
             existing.Salary = emp.Salary;
