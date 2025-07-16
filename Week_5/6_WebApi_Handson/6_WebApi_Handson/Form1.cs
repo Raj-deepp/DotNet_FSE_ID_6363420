@@ -6,5 +6,10 @@ namespace _6_WebApi_Handson
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
