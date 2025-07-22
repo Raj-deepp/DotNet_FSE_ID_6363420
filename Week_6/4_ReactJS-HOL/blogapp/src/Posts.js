@@ -23,6 +23,26 @@ class Posts extends React.Component{
         this.setState({hasError: true});
       });
   }
+
+  componentDidCatch(error, info){
+    alert("An error occurred while rendering the component.");
+    console.error("Error caught:", error, info);
+  }
+
+  render(){
+    if (this.state.hasError){
+      return <p>Error occurred while fetching posts.</p>;
+    }
+
+    return(
+      <div>
+        <h2>Posts</h2>
+        {this.state.posts.map((post)=> (
+          <Post key={post.id} title={post.title} body={post.body} />
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Posts;
