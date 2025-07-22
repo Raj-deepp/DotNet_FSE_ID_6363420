@@ -1,8 +1,14 @@
-class Post{
-    constructor(id, title, body){
-        this.id= id;
-        this.title= title;
-        this.body= body;
-    }
+import React from "react";
+
+class Post extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>{this.props.title}</h3>
+        <p>{this.props.body}</p>
+      </div>
+    );
+  }
 }
+
 export default Post;
