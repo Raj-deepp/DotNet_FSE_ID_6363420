@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import Home from "./Home";
+import TrainerList from "./TrainerList";
+import TrainerDetails from "./TrainerDetails";
+import trainers from './TrainersMock';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/trainers">Trainers</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/trainers" element={<TrainerList trainers={trainers} />} />
+        <Route path="/trainers/:id" element={<TrainerDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

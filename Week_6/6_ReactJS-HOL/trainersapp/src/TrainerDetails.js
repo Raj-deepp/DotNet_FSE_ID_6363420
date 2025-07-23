@@ -1,9 +1,10 @@
 import {useParams} from "react-router-dom";
-import {trainers} from "./TrainersMock";
+import trainers from './TrainersMock';
+
 
 function TrainerDetails(){
   const {id} = useParams();
-  const trainer= trainers.find(t=> t.trainerId === parseInt(id));
+  const trainer = trainers.find(t => t.trainerId === id);
 
   return trainer ? (
     <div>
