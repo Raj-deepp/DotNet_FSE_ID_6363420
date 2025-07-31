@@ -15,7 +15,7 @@ function Counter(){
   const displayMessage= () => console.log("Counter Updated!");
 
   return (
-    <div>
+    <div className="cnt">
       <h2>Counter: {count}</h2>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
